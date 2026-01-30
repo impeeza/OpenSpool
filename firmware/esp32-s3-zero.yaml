@@ -1,17 +1,17 @@
 esp32:
-  board: lolin_s3_mini
-  variant: esp32s3 #TOOD: add support upstream for lolin_s3_mini
+  board: waveshare_esp32_s3_zero
+  #variant: esp32s3 #TOODO: add support upstream for lolin_s3_mini
 
 substitutions:
   hide_ams_sensors: 'true'
-  led_pin: GPIO1 #blue to logic converter/led
+  led_pin: GPIO21 #To use internal NeoPixel blue to logic converter/led
   spi2_type: SPI2
   spi2_clk_pin: GPIO13 # blue (pn532- sck)
   spi2_miso_pin: GPIO12 # green (pn532- MISO)
   spi2_mosi_pin: GPIO11 # yellow (pn532- MOSI)
   rfid0_spi_interface: SPI2
   rfid0_ss_pin: GPIO10 # orange (pn532- SS)
-  neopixel_pin: '21'
+  neopixel_pin: 'GPIO01' #cyan to logic converter/led, if you like to use a external LED
 
 packages:
   openspool-mini: !include openspool-mini.yaml
